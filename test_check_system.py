@@ -1,5 +1,4 @@
-import pytest
-from unittest.mock import patch, MagicMock
+from unittest.mock import patch
 from datetime import date
 import check_system
 
@@ -23,3 +22,5 @@ def test_get_system_status_output(mock_shutil, mock_platform, mock_date, capsys)
     assert "OS:             Linux 5.15.0-100-generic" in stdout
     assert "Python Version: 3.12.3" in stdout
     assert "Disk Space:     400 GB free of 500 GB" in stdout
+    assert "Python 3:       [OK]" in stdout
+    assert "Disk Space:     [OK]" in stdout
