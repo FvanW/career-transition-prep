@@ -1,4 +1,3 @@
-import os
 import shutil
 import platform
 from datetime import date
