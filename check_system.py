@@ -12,7 +12,7 @@ def get_system_status():
     print(f"Python Version: {platform.python_version()}")
 
     # Check Disk Space
-    total, used, free = shutil.disk_usage("/")
+    total, _, free = shutil.disk_usage("/")
     print(f"Disk Space:     {free // (2**30)} GB free of {total // (2**30)} GB")
 
     # Training Environment Info
