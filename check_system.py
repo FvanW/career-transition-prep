@@ -3,12 +3,14 @@ import platform
 from datetime import date
 
 def get_system_status():
+    py_version = platform.python_version()
+
     print("=========================================")
     print("   CAREER TRANSITION PREP - ENV CHECK   ")
     print("=========================================")
     print(f"Date:           {date.today()}")
     print(f"OS:             {platform.system()} {platform.release()}")
-    print(f"Python Version: {platform.python_version()}")
+    print(f"Python Version: {py_version}")
 
     # Check Disk Space
     total, _, free = shutil.disk_usage("/")
@@ -25,7 +27,7 @@ def get_system_status():
     # Environment Health
     print("")
     print("--- ENVIRONMENT STATUS ---")
-    python_ok = platform.python_version().startswith("3")
+    python_ok = py_version.startswith("3")
     disk_ok = free // (2**30) > 10
     print(f"Python 3:       {'[OK]' if python_ok else '[FAIL]'}")
     print(f"Disk Space:     {'[OK]' if disk_ok else '[LOW]'}")
