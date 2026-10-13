@@ -2,6 +2,8 @@ import shutil
 import platform
 from datetime import date
 
+BYTES_PER_GB = 2**30
+
 def get_system_status():
     py_version = platform.python_version()
 
@@ -14,7 +16,7 @@ def get_system_status():
 
     # Check Disk Space
     total, _, free = shutil.disk_usage("/")
-    print(f"Disk Space:     {free // (2**30)} GB free of {total // (2**30)} GB")
+    print(f"Disk Space:     {free // BYTES_PER_GB} GB free of {total // BYTES_PER_GB} GB")
 
     # Training Environment Info
     print("")
@@ -28,7 +30,7 @@ def get_system_status():
     print("")
     print("--- ENVIRONMENT STATUS ---")
     python_ok = py_version.startswith("3")
-    disk_ok = free // (2**30) > 10
+    disk_ok = free // BYTES_PER_GB > 10
     print(f"Python 3:       {'[OK]' if python_ok else '[FAIL]'}")
     print(f"Disk Space:     {'[OK]' if disk_ok else '[LOW]'}")
 
