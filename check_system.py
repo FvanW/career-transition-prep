@@ -19,7 +19,7 @@ def get_system_status():
     print(f"Disk Space:     {free // BYTES_PER_GB} GB free of {total // BYTES_PER_GB} GB")
 
     # Training Environment Info
-    print("")
+    print()
     print("--- TRAINING ENVIRONMENT ---")
     print("Target Role:    Cloud Engineer / Cybersecurity Analyst")
     print("Current Phase:  Phase 1 - VSF Scholarship (2026)")
@@ -27,14 +27,14 @@ def get_system_status():
     print("Lab Setup:      WSL2 Ubuntu 24.04 on Windows 11")
 
     # Environment Health
-    print("")
+    print()
     print("--- ENVIRONMENT STATUS ---")
     python_ok = py_version.startswith("3")
     disk_ok = free // BYTES_PER_GB > 10
     print(f"Python 3:       {'[OK]' if python_ok else '[FAIL]'}")
     print(f"Disk Space:     {'[OK]' if disk_ok else '[LOW]'}")
 
-    print("")
+    print()
     print("[SUCCESS] Environment fully operational. Stay consistent.")
     print("=========================================")
 
