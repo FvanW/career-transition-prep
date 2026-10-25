@@ -12,10 +12,11 @@ def test():
 setup_optimized = """
 import platform
 
+_cached_version = platform.python_version()
+
 def test():
-    v = platform.python_version()
-    v1 = v
-    v2 = v
+    v1 = _cached_version
+    v2 = _cached_version
     return v1, v2
 """
 
